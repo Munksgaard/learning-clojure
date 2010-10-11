@@ -14,7 +14,7 @@ Introduction
 
 So, what is Clojure? From Wikipedia:
 
- > Clojure is a modern dialect of the Lisp programming language. It is
+> Clojure is a modern dialect of the Lisp programming language. It is
 a general-purpose language supporting interactive development that
 encourages a functional programming style, and simplifies
 multithreaded programming.
