@@ -150,7 +150,7 @@ it's simply passing the files to a Clojure process running in the
 background.
 
 This is also how you run other clj files, they don't need to be in a
-project. Just do "cake run <someClojureFile>.clj" to run it.
+project. Just do "cake run \<someClojureFile\>.clj" to run it.
 
 If you want a REPL (Read Eval Print Loop, like pythons commandline
 interpreter) simple issue the command "cake repl"
