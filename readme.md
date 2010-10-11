@@ -202,8 +202,8 @@ related subjects i've been able to find.
 
 [Clojuredocs Quickref](http://clojuredocs.org/quickref/Clojure%20Core)  
 [Clojure-contrib 1.2.0
-documentation](http://clojure.github.com/clojure-contrib)
-[Clojure on Wikipedia](http://en.wikipedia.org/wiki/Clojure)
-[Cake documentation on Github](http://github.com/ninjudd/cake)
-[Clojure 1.2.0 documentation](http://clojure.github.com/clojure)
-[Clojure cheatsheet](http://clojure.org/cheatsheet)
+documentation](http://clojure.github.com/clojure-contrib)  
+[Clojure on Wikipedia](http://en.wikipedia.org/wiki/Clojure)  
+[Cake documentation on Github](http://github.com/ninjudd/cake)  
+[Clojure 1.2.0 documentation](http://clojure.github.com/clojure)  
+[Clojure cheatsheet](http://clojure.org/cheatsheet)  
