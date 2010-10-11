@@ -15,8 +15,9 @@ Introduction
 So, what is Clojure? From Wikipedia:
 
  > Clojure is a modern dialect of the Lisp programming language. It is
- > a general-purpose language supporting interactive development that
- > encourages a functional programming style, and simplifies multithreaded programming.
+a general-purpose language supporting interactive development that
+encourages a functional programming style, and simplifies
+multithreaded programming.
 
 Clojure is very new programming language (first made public in
 2007). Therefore it is still in very active development, and many
