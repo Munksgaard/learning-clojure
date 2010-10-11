@@ -118,43 +118,92 @@ Now you need to install ruby-gems:
 
 _Note that apparently ruby doesn't install itself on a proper path, so
 in order for cake to work properly, we need to create the symlink._
-_
+
 Now we're ready to install cake!
 
     sudo gem install --bindir /usr/bin cake
+    cake deps
 
-Now we're actually ready to create our first Clojure project!
-Go in to the directory where you want your project (for testing
-purposes, i usually use <code>~/tmp/</code>).  
-This is where we will create our project.
+The last command will fetch clojure and clojure-contrib for us.
 
-    cake new hello-clojure
+Hello World
+-----------
 
-The first time you run cake, it will take some time, since cake will
-fetch and install Clojure. Don't worry, this is only the first time.
+Cake is a build management tool, but i've found that it also eases
+using Clojure normally.  
+Therefore, we're going to use cake to invoke Clojure.
 
-Cake has now created a new directory called hello-clojure, inside
-which is your new Clojure project. For now, we will ignore all the
-files and directories inside hello-clojure. Go into the src directory,
-create a new directory named "hello-clojure" and create a file called
-"core.clj" inside that directory. In this file, simply write:
+Create a file called hello-clojure.clj with the following in it:
 
-    (ns hello-clojure.core)
-
+    #!/usr/bin/env cake
     (println "Hello world! Kind regards from Clojure!")
 
-To run this file, simply type <code>cake run core.clj</code>.
 
-Note, that cake isn't interpreting the Clojure sourcecode or anything,
-it's simply passing the files to a Clojure process running in the
-background.
+The first line is just the standard line for telling linux how to
+execute it. Clojure recently added the feature to ignore such a line,
+even though it's not valid Clojure code.
 
-This is also how you run other clj files, they don't need to be in a
-project. Just do "cake run \<someClojureFile\>.clj" to run it.
+To run this file, simply type <code>cake run core.clj</code>.  
+You can also run it by making it executable and doing
+<code>./hello-clojure.clj</code>.
 
-If you want a REPL (Read Eval Print Loop, like pythons commandline
-interpreter) simple issue the command "cake repl"
+__Note:__ Every time you start up cake for the first time after a
+reboot (or a 'cake kill') cake has to load the JVM. That means that
+the first call to cake will always be a little slow, it might take a
+few seconds, but after that it'll be fast!
 
+Starting a REPL
+---------------
 
+Getting to a REPL (Read Eval Print Loop) is as easy as
 
+    cake repl
 
+Starting a new project
+----------------------
+
+Although you can work on simple scripts and one-liners in a file by
+itself, for anything else you should use a project.  
+Creating a project is as easy as:
+
+    cake new project-name
+
+Creating a project makes it a lot easier to handle dependencies,
+create distributable jar-files and more.  
+Create one now called <code>clojure-test</code>.  
+Inside the project directory, you will find a lot of files, but of
+primary interest for you is <code>project.clj</code>. This is where
+you will define dependencies, what classes to run and a lot more.
+For now, you'll note that, per default, <code>project.clj</code>
+states that your project is called clojure-test, has the version
+0.0.1-SNAPSHOT (the -SNAPSHOT part means that it's not a final
+version), that you need to write a description, and that it has
+clojure 1.2.0 as a dependency.  
+To add dependencies, simply add them to the vector with name and
+version. For more information about the syntax of project.clj and
+other options you can put in there, refer to [leiningens
+sample.project.clj](http://github.com/technomancy/leiningen/blob/master/sample.project.clj)
+(leiningen is another build management tool like cake, and cake uses
+leiningens syntax for project.clj).
+
+__TODO:__ Write more about projects, maybe a whole section about
+creating jars etc. Also the default project (~/.cake/project.clj)
+
+Emacs integration
+-----------------
+
+slime, swank, cake swank
+
+Ressources
+==========
+
+This is a collection of the best documentation on Clojure (1.2.0) and
+related subjects i've been able to find.
+
+[Clojuredocs Quickref](http://clojuredocs.org/quickref/Clojure%20Core)  
+[Clojure-contrib 1.2.0
+documentation](http://clojure.github.com/clojure-contrib)
+[Clojure on Wikipedia](http://en.wikipedia.org/wiki/Clojure)
+[Cake documentation on Github](http://github.com/ninjudd/cake)
+[Clojure 1.2.0 documentation](http://clojure.github.com/clojure)
+[Clojure cheatsheet](http://clojure.org/cheatsheet)
